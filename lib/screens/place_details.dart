@@ -10,10 +10,10 @@ class PlaceDetailsScreen extends StatelessWidget{
 
 
   String get locationImage {
-    // final lat = place.location.latitude;
-    // final lng = place.location.longitude;
-    final lat = 23.7516833;
-    final lng = 90.3856833;
+    final lat = place.location.latitude;
+    final lng = place.location.longitude;
+    // final lat = 23.7516833;
+    // final lng = 90.3856833;
     return 'https://maps.geoapify.com/v1/staticmap?style=osm-bright-smooth&width=600&height=400&center=lonlat:$lng,$lat&zoom=14&apiKey=ba67c02940cd40dc9249de686c079016';
   }
 

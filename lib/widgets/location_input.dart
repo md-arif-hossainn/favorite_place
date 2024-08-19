@@ -27,17 +27,17 @@ class _LocationInputState extends State<LocationInput> {
     if(_pickedLocation == null){
       return '';
     }
-    // final lat = _pickedLocation!.latitude;
-    // final lng = _pickedLocation!.longitude;
-    final lat = 23.7516833;
-    final lng = 90.3856833;
+    final lat = _pickedLocation!.latitude;
+    final lng = _pickedLocation!.longitude;
+    // final lat = 23.7516833;
+    // final lng = 90.3856833;
     return 'https://maps.geoapify.com/v1/staticmap?style=osm-bright-smooth&width=600&height=400&center=lonlat:$lng,$lat&zoom=14&apiKey=ba67c02940cd40dc9249de686c079016';
   }
 
   Future<void> _savePlace(double latitude, double longitude) async {
 
-    //final url = Uri.parse('https://api.geoapify.com/v1/geocode/reverse?lat=$latitude&lon=$longitude&apiKey=ba67c02940cd40dc9249de686c079016');
-    final url = Uri.parse('https://api.geoapify.com/v1/geocode/reverse?lat=24.3746&lon=88.6004&apiKey=ba67c02940cd40dc9249de686c079016');
+    final url = Uri.parse('https://api.geoapify.com/v1/geocode/reverse?lat=$latitude&lon=$longitude&apiKey=ba67c02940cd40dc9249de686c079016');
+    //final url = Uri.parse('https://api.geoapify.com/v1/geocode/reverse?lat=24.3746&lon=88.6004&apiKey=ba67c02940cd40dc9249de686c079016');
     final response = await http.get(url);
     final resData = json.decode(response.body);
     print("-------------------------------------");
